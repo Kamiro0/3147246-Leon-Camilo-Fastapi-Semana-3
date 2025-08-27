@@ -1,11 +1,10 @@
-# routers/products.py
+
 from fastapi import APIRouter, HTTPException
 from models import Product
 from typing import List
 
 router = APIRouter(prefix="/products", tags=["products"])
 
-# Simulación de base de datos en memoria
 products_db = []
 
 @router.get("/", response_model=List[Product])

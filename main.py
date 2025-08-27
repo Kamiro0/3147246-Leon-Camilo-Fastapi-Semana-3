@@ -3,7 +3,6 @@ from routers import products
 
 app = FastAPI(title="API de Inventario Simple - Semana 3")
 
-# Incluir router de productos
 app.include_router(products.router)
 
 @app.get("/")
