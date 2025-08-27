@@ -1,32 +1,32 @@
-Descripción General
+Descripción general
 
-Este proyecto implementa una API REST utilizando FastAPI para la gestión simple de productos de inventario.
-Incluye un CRUD básico, validación de datos con Pydantic, manejo de errores y documentación automática con Swagger UI.
+Este proyecto consiste en una API REST desarrollada con FastAPI para administrar un inventario de productos.
+Incluye operaciones CRUD básicas, validación de datos mediante Pydantic, manejo de errores y documentación automática con Swagger UI.
 
- Cosas nuevas agregadas
+Novedades incorporadas
 
- Se creó la carpeta routers/ para organizar los endpoints.
+Se creó la carpeta routers/ para organizar los endpoints de manera más clara.
 
- Dentro de routers/, se añadió products.py que contiene un CRUD básico para productos usando una lista en memoria.
+Dentro de routers/ se agregó el archivo products.py, que implementa un CRUD simple utilizando una lista en memoria.
 
- Se agregó un models.py para centralizar los modelos Pydantic.
+Se añadió un models.py para centralizar los modelos de datos basados en Pydantic.
 
- En main.py se incluyó el router de productos, manteniendo el código modular y escalable.
+En main.py se integró el router de productos, manteniendo una estructura modular y escalable.
 
- Se implementó el manejo de errores con HTTPException en los endpoints.
+Se incluyó manejo de errores usando HTTPException en los endpoints.
 
 Estructura del proyecto
 estudiante-nombre/
-├── main.py                 # API principal con endpoints generales
+├── main.py                 # API principal con rutas generales
 ├── models.py               # Modelos Pydantic (Product, etc.)
 ├── routers/
 │   └── products.py         # CRUD de productos
-├── requirements.txt        # Dependencias del proyecto
-└── README.md               # Documentación del proyecto
+├── requirements.txt        # Dependencias
+└── README.md               # Documentación
 
-▶Ejemplo de uso del endpoint POST /products
+Ejemplo: Endpoint POST /products
 
-Request (body en JSON):
+Petición (JSON):
 
 {
   "name": "Laptop",
@@ -35,7 +35,7 @@ Request (body en JSON):
 }
 
 
-Response (ejemplo de salida):
+Respuesta (JSON):
 
 {
   "id": 1,
@@ -45,50 +45,52 @@ Response (ejemplo de salida):
 }
 
 Endpoints principales
+
 Productos
 
-GET /products/ → Lista todos los productos.
+GET /products/ → Devuelve la lista completa de productos.
 
-POST /products/ → Crea un nuevo producto.
+POST /products/ → Registra un nuevo producto.
 
-GET /products/{product_id} → Obtiene un producto por ID.
+GET /products/{product_id} → Consulta un producto por su ID.
 
 Información general
 
 GET / → Mensaje de bienvenida.
 
-GET /info → Información básica de la API.
+GET /info → Datos básicos sobre la API.
 
-GET /my-profile → Datos de perfil del desarrollador.
+GET /my-profile → Información del desarrollador.
 
-Dependencias
+Dependencias necesarias
 
-El proyecto requiere instalar las dependencias listadas en requirements.txt:
+Se deben instalar las librerías indicadas en requirements.txt:
 
 fastapi
-uvicorn
-pydantic
 
+uvicorn
+
+pydantic
 
 Instalación rápida:
 
 pip install -r requirements.txt
 
- Ejecución
+Ejecución del servidor
 
-Para ejecutar el servidor local:
+Para correr la API en local:
 
 uvicorn main:app --reload
 
 
-La API estará disponible en:
+La aplicación quedará disponible en:
 
 http://127.0.0.1:8000
 
 Documentación Swagger: http://127.0.0.1:8000/docs
 
-Reflexión
+Reflexión personal
 
-Este ejercicio me permitió comprender cómo separar la lógica de la API en routers para mantener un proyecto limpio y modular.
-También aprendí a utilizar Pydantic para validar datos de entrada de manera sencilla y confiable.
-Ahora me siento más familiarizado con la creación de endpoints RESTful en FastAPI, lo que será útil para proyectos más complejos.
+Este trabajo me ayudó a comprender la importancia de organizar una API mediante routers para mantener el código ordenado y escalable.
+Aprendí a validar datos con Pydantic y a manejar errores correctamente, lo que hace que las APIs sean más seguras y robustas.
+Además, me permitió practicar la creación de endpoints REST con FastAPI, una habilidad útil para futuros proyectos más avanzados.
